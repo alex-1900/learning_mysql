@@ -1,0 +1,18 @@
+name: learning_mysql
+
+services:
+  mysql_9:
+    image: mysql:9.0.0
+    restart: always
+    working_dir: /app
+    volumes:
+      - learning_mysql_9:/var/lib/mysql
+      - ./config.d:/etc/mysql/conf.d
+      - .:/app
+    environment:
+      - MYSQL_USER=gray
+      - MYSQL_PASSWORD=learning_mysql
+      - MYSQL_ROOT_PASSWORD=learning_mysql
+
+volumes:
+  learning_mysql_9:
