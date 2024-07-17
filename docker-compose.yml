@@ -13,6 +13,8 @@ services:
       - MYSQL_USER=gray
       - MYSQL_PASSWORD=learning_mysql
       - MYSQL_ROOT_PASSWORD=learning_mysql
+    ports:
+      - "33069:3306"
 
 volumes:
   learning_mysql_9:

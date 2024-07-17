@@ -13,3 +13,8 @@ git config --global http.postBuffer 157286400
 git config --global http.version HTTP/1.1
 git config --global http.version HTTP/2
 ```
+
+## 授权 gray
+```mysql
+GRANT RELOAD ON *.* TO 'gray'@'%';
+```
