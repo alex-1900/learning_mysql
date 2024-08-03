@@ -1,7 +1,7 @@
 name: learning_mysql
 
 services:
-  mysql_9:
+  mysql_90:
     image: mysql:9.0.0
     restart: always
     working_dir: /app
@@ -15,6 +15,21 @@ services:
       - MYSQL_ROOT_PASSWORD=learning_mysql
     ports:
       - "33069:3306"
+  mysql_57:
+    image: mysql:5.7
+    restart: always
+    working_dir: /app
+    volumes:
+      - learning_mysql_5:/var/lib/mysql
+      - ./config.d:/etc/mysql/conf.d
+      - .:/app
+    environment:
+      - MYSQL_USER=gray
+      - MYSQL_PASSWORD=learning_mysql
+      - MYSQL_ROOT_PASSWORD=learning_mysql
+    ports:
+      - "33065:3306"
 
 volumes:
   learning_mysql_9:
+  learning_mysql_5:
